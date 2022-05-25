@@ -9,6 +9,7 @@ import Moya
 
 public enum ChuckNorrisApi {
     case search(String)
+    case categories
 }
 
 extension ChuckNorrisApi: TargetType {
@@ -17,10 +18,12 @@ extension ChuckNorrisApi: TargetType {
         switch self {
         case .search:
             return "/jokes/search"
+        case .categories:
+            return "/jokes/categories"
         }
     }
     public var method: Moya.Method { .get }
-
+    
     public var task: Task {
         switch self {
         case .search(let query):
@@ -30,5 +33,5 @@ extension ChuckNorrisApi: TargetType {
         }
     }
     public var headers: [String: String]? { nil }
-
+    
 }
