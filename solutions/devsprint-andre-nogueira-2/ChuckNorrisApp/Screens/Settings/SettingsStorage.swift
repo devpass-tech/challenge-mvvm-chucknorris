@@ -25,4 +25,8 @@ struct SettingsStorage {
         }
         return preferred
     }
+    
+    func savePreferred(categorie: String) {
+        UserDefaults.standard.set(categorie, forKey: preferredKey)
+    }
 }
