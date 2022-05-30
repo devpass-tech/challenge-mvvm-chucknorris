@@ -22,8 +22,3 @@ struct Jokes: Decodable {
     let url: String?
     let value: String?
 }
-
-
-//struct CategoriesModel: Decodable {
-//
-//}

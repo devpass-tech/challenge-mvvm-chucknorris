@@ -11,12 +11,14 @@ struct SearchView: View {
 
     @State private var searchText: String = ""
     @State private var showingSettings = false
+    @EnvironmentObject private var searchContext: SearchContext
+    private var categoriesView = CategoriesFactory()
 
     private var searchFacts: [String] = ["Fact 1", "Fact 2", "Fact 3", "Fact 4", "Fact 5"]
 
     var body: some View {
         NavigationView {
-            CategoriesView()
+            categoriesView.makeCategories()
                 .navigationTitle("Search")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -33,13 +35,12 @@ struct SearchView: View {
                          }
                     }
                 }
-        }.searchable(text: $searchText,
+        }.searchable(text: $searchContext.searchText,
                      placement: .navigationBarDrawer(displayMode: .always)) {
 
                 ForEach(searchFacts, id: \.self) { fact in
                     Text(fact)
                 }
-
         }.onSubmit(of: .search) {
 
         }
