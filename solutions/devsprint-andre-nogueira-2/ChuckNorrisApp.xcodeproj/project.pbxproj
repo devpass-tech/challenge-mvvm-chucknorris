@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3D85E74B943C5C2232961D6D /* Pods_ChuckNorrisApp_ChuckNorrisAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBA9E96F127936210E86AD8D /* Pods_ChuckNorrisApp_ChuckNorrisAppUITests.framework */; };
+		5ABFEE7A284575DF0041AEC7 /* RandomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ABFEE79284575DF0041AEC7 /* RandomModel.swift */; };
 		5F0098E6968066271C9FF727 /* Pods_ChuckNorrisAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B458E8854E275E956C6AB77 /* Pods_ChuckNorrisAppTests.framework */; };
 		8173DC34589C519E5730FFBB /* Pods_ChuckNorrisApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0358E88DFD47CD98C506869E /* Pods_ChuckNorrisApp.framework */; };
 		9873178A2835827E004BD042 /* ChuckNorrisAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987317892835827E004BD042 /* ChuckNorrisAppApp.swift */; };
@@ -48,6 +49,7 @@
 		0B458E8854E275E956C6AB77 /* Pods_ChuckNorrisAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuckNorrisAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		159303796CB63228E35E0288 /* Pods-ChuckNorrisApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisApp.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisApp/Pods-ChuckNorrisApp.debug.xcconfig"; sourceTree = "<group>"; };
 		4DEF8DA1855459974E2BE670 /* Pods-ChuckNorrisApp-ChuckNorrisAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisApp-ChuckNorrisAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisApp-ChuckNorrisAppUITests/Pods-ChuckNorrisApp-ChuckNorrisAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5ABFEE79284575DF0041AEC7 /* RandomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomModel.swift; sourceTree = "<group>"; };
 		96BDC4E5CE27D63F98076A44 /* Pods-ChuckNorrisAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisAppTests/Pods-ChuckNorrisAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		987317862835827D004BD042 /* ChuckNorrisApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChuckNorrisApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987317892835827E004BD042 /* ChuckNorrisAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckNorrisAppApp.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				B1EDD06F283D840A008463E9 /* SearchJokesModel.swift */,
+				5ABFEE79284575DF0041AEC7 /* RandomModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				987317B92835849E004BD042 /* RandomFactView.swift in Sources */,
 				B1EDD070283D840A008463E9 /* SearchJokesModel.swift in Sources */,
 				B1EDD073283D85A0008463E9 /* ApiService.swift in Sources */,
+				5ABFEE7A284575DF0041AEC7 /* RandomModel.swift in Sources */,
 				9873178A2835827E004BD042 /* ChuckNorrisAppApp.swift in Sources */,
 				B1602067283C71D200507ACD /* ChuckNorrisApi.swift in Sources */,
 				98C9EEFC2835906100FF9BC9 /* CategoriesView.swift in Sources */,

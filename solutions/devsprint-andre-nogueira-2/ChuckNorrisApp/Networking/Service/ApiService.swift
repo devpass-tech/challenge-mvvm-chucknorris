@@ -10,7 +10,7 @@ import Combine
 
 protocol ApiServiceProtocol {
     func makeSearchRequest(query: String) -> AnyPublisher<SearchJokesModel, MoyaError>
-    func makeRandomRequest() -> AnyPublisher<String, MoyaError>
+    func makeRandomRequest() -> AnyPublisher<RandomModel, MoyaError>
 }
 
 final class ApiService {
@@ -18,11 +18,11 @@ final class ApiService {
 }
 
 extension ApiService: ApiServiceProtocol {
-    func makeRandomRequest() -> AnyPublisher<String, MoyaError> {
+    func makeRandomRequest() -> AnyPublisher<RandomModel, MoyaError> {
         provider.requestPublisher(
             .random,
             callbackQueue: DispatchQueue.main
-        ).map(String.self)
+        ).map(RandomModel.self)
     }
     
     
