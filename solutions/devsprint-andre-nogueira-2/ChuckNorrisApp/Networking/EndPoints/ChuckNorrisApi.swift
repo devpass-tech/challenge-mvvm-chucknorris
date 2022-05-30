@@ -9,7 +9,7 @@ import Moya
 
 public enum ChuckNorrisApi {
     case search(String)
-    case random(String)
+    case random
 }
 
 extension ChuckNorrisApi: TargetType {
@@ -19,7 +19,7 @@ extension ChuckNorrisApi: TargetType {
         case .search:
             return "/jokes/search"
         case .random:
-            return "/jokes/random?category="
+            return "/jokes/random"
         }
     }
     public var method: Moya.Method { .get }
@@ -28,8 +28,6 @@ extension ChuckNorrisApi: TargetType {
         switch self {
         case .search(let query):
             return .requestParameters(parameters: ["query": query], encoding: URLEncoding.default)
-        case .random(let category):
-            return .requestParameters(parameters: ["category": category], encoding: URLEncoding.default)
         default:
             return .requestPlain
         }
