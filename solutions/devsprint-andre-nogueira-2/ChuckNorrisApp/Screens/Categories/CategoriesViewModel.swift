@@ -15,7 +15,7 @@ protocol CategoriesViewModelContract: ObservableObject {
 
 public class CategoriesViewModel: CategoriesViewModelContract {
     
-    @Published var categoriesArray: [String] = []
+    @Published private(set) var categoriesArray: [String] = []
     private let apiService: ApiService
     private var disposables = Set<AnyCancellable>()
 
