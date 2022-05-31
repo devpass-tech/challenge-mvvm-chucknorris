@@ -24,6 +24,9 @@
 		B1602067283C71D200507ACD /* ChuckNorrisApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1602066283C71D200507ACD /* ChuckNorrisApi.swift */; };
 		B1EDD070283D840A008463E9 /* SearchJokesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EDD06F283D840A008463E9 /* SearchJokesModel.swift */; };
 		B1EDD073283D85A0008463E9 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EDD072283D85A0008463E9 /* ApiService.swift */; };
+		F4A9E2CE283FAE2000DD5671 /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9E2CD283FAE2000DD5671 /* CategoriesViewModel.swift */; };
+		F4A9E2D02841779C00DD5671 /* CategoriesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9E2CF2841779C00DD5671 /* CategoriesFactory.swift */; };
+		F4A9E2D4284569CF00DD5671 /* SearchContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A9E2D3284569CF00DD5671 /* SearchContext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +71,9 @@
 		B1EDD06F283D840A008463E9 /* SearchJokesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchJokesModel.swift; sourceTree = "<group>"; };
 		B1EDD072283D85A0008463E9 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		D893D083FA82992119D9F7CE /* Pods-ChuckNorrisAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisAppTests.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisAppTests/Pods-ChuckNorrisAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		F4A9E2CD283FAE2000DD5671 /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		F4A9E2CF2841779C00DD5671 /* CategoriesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFactory.swift; sourceTree = "<group>"; };
+		F4A9E2D3284569CF00DD5671 /* SearchContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchContext.swift; sourceTree = "<group>"; };
 		FBA9E96F127936210E86AD8D /* Pods_ChuckNorrisApp_ChuckNorrisAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChuckNorrisApp_ChuckNorrisAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFD3FE993E98CEDEAD7F0969 /* Pods-ChuckNorrisApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChuckNorrisApp.release.xcconfig"; path = "Target Support Files/Pods-ChuckNorrisApp/Pods-ChuckNorrisApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -198,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				987317B628358493004BD042 /* SearchView.swift */,
+				F4A9E2D3284569CF00DD5671 /* SearchContext.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -222,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				98C9EEFB2835906100FF9BC9 /* CategoriesView.swift */,
+				F4A9E2CD283FAE2000DD5671 /* CategoriesViewModel.swift */,
+				F4A9E2CF2841779C00DD5671 /* CategoriesFactory.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -515,12 +524,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				98C9EF00283596D800FF9BC9 /* SettingsView.swift in Sources */,
+				F4A9E2D4284569CF00DD5671 /* SearchContext.swift in Sources */,
 				987317B728358493004BD042 /* SearchView.swift in Sources */,
+				F4A9E2CE283FAE2000DD5671 /* CategoriesViewModel.swift in Sources */,
 				9873178C2835827E004BD042 /* ContentView.swift in Sources */,
 				987317B92835849E004BD042 /* RandomFactView.swift in Sources */,
 				B1EDD070283D840A008463E9 /* SearchJokesModel.swift in Sources */,
 				B1EDD073283D85A0008463E9 /* ApiService.swift in Sources */,
 				9873178A2835827E004BD042 /* ChuckNorrisAppApp.swift in Sources */,
+				F4A9E2D02841779C00DD5671 /* CategoriesFactory.swift in Sources */,
 				B1602067283C71D200507ACD /* ChuckNorrisApi.swift in Sources */,
 				98C9EEFC2835906100FF9BC9 /* CategoriesView.swift in Sources */,
 			);
