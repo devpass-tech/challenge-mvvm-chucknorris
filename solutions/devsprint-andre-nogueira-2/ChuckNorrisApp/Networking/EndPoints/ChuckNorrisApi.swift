@@ -10,6 +10,7 @@ import Moya
 public enum ChuckNorrisApi {
     case search(String)
     case random
+    case categories
 }
 
 extension ChuckNorrisApi: TargetType {
@@ -20,10 +21,12 @@ extension ChuckNorrisApi: TargetType {
             return "/jokes/search"
         case .random:
             return "/jokes/random"
+        case .categories:
+            return "/jokes/categories"
         }
     }
     public var method: Moya.Method { .get }
-
+    
     public var task: Task {
         switch self {
         case .search(let query):
@@ -33,5 +36,5 @@ extension ChuckNorrisApi: TargetType {
         }
     }
     public var headers: [String: String]? { nil }
-
+    
 }

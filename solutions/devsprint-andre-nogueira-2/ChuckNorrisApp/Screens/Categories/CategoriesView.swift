@@ -8,18 +8,24 @@
 import SwiftUI
 
 struct CategoriesView: View {
+    
+    @ObservedObject private var categoriesViewModel: CategoriesViewModel
+    @EnvironmentObject private var searchContext: SearchContext
 
-    var categories = ["Animal", "Career", "Celebrity", "Dev"]
-
+    init(categoriesViewModel: CategoriesViewModel) {
+        self.categoriesViewModel = categoriesViewModel
+    }
+    
     var body: some View {
         VStack {
             List {
                 Section(header: ListHeaderView()) {
-                    ForEach(categories,
+
+                    ForEach(categoriesViewModel.categoriesArray,
                         id: \.self
                     ) { category in
                         Text(category).onTapGesture {
-
+                            searchContext.searchText = category
                         }
                     }
                 }
