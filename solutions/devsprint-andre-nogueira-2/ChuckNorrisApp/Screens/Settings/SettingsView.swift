@@ -30,13 +30,13 @@ struct Cell: View {
 
 
 struct SettingsView: View {
-    let userDefaults = SettingsStorage()
+    @ObservedObject private var settingsViewModel = SettingsViewModel()
     
     var body: some View {
         NavigationView {
             List {
-                Cell(title: "Preferred category", detail: userDefaults.getPreferred())
-                Cell(title: "App version", detail: userDefaults.getVersion() )
+                Cell(title: "Preferred category", detail: settingsViewModel.getPreferred())
+                Cell(title: "App version", detail: settingsViewModel.getVersion())
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Settings")
