@@ -10,6 +10,7 @@ import Combine
 
 protocol ApiServiceProtocol {
     func makeSearchRequest(query: String) -> AnyPublisher<SearchJokesModel, MoyaError>
+    func makeCategoriesRequest() -> AnyPublisher<[String], MoyaError>
 }
 
 final class ApiService {
@@ -17,11 +18,18 @@ final class ApiService {
 }
 
 extension ApiService: ApiServiceProtocol {
-    
+
+    func makeCategoriesRequest() -> AnyPublisher<[String], MoyaError> {
+        provider.requestPublisher(
+            .categories,
+            callbackQueue: DispatchQueue.main
+        ).map([String].self)
+    }
+
     func makeSearchRequest(query: String) -> AnyPublisher<SearchJokesModel, MoyaError> {
         provider.requestPublisher(
             .search(query),
             callbackQueue: DispatchQueue.main
         ).map(SearchJokesModel.self)
-    }    
+    }
 }
