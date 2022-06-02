@@ -9,13 +9,15 @@ import SwiftUI
 
 struct SearchView: View {
 
-    @State private var searchText: String = ""
     @State private var showingSettings = false
     @EnvironmentObject private var searchContext: SearchContext
     private var categoriesFactory = CategoriesFactory()
-
-    private var searchFacts: [String] = ["Fact 1", "Fact 2", "Fact 3", "Fact 4", "Fact 5"]
-
+    @ObservedObject private var viewModel: SearchViewModel
+    
+    init(viewModel: SearchViewModel) {
+        self.viewModel = viewModel
+    }
+    
     var body: some View {
         NavigationView {
             categoriesFactory.makeCategories()
@@ -38,17 +40,17 @@ struct SearchView: View {
         }.searchable(text: $searchContext.searchText,
                      placement: .navigationBarDrawer(displayMode: .always)) {
 
-                ForEach(searchFacts, id: \.self) { fact in
+            ForEach(viewModel.jokesArray, id: \.self) { fact in
                     Text(fact)
                 }
         }.onSubmit(of: .search) {
-
+            viewModel.makeSearchRequest(with: searchContext.searchText)
         }
     }
 }
-
-struct SearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchView()
-    }
-}
+//
+//struct SearchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SearchView()
+//    }
+//}

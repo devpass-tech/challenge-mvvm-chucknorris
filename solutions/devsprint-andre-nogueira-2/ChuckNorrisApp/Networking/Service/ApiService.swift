@@ -19,6 +19,7 @@ final class ApiService {
 }
 
 extension ApiService: ApiServiceProtocol {
+    
     func makeRandomRequest() -> AnyPublisher<RandomModel, MoyaError> {
         provider.requestPublisher(
             .random,

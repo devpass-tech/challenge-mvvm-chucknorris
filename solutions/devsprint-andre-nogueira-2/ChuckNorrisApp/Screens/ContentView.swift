@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
-            SearchView()
+            SearchFactory.makeFactory()
                 .tabItem {
                     Label("Search", systemImage: "magnifyingglass.circle")
                 }
