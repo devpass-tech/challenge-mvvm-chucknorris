@@ -18,9 +18,13 @@ public class CategoriesViewModel: CategoriesViewModelContract {
     @Published private(set) var categoriesArray: [String] = []
     private let apiService: ApiService
     private var disposables = Set<AnyCancellable>()
-
-    init(apiService: ApiService){
+    private let storage: SettingsStorage
+    init(
+        apiService: ApiService,
+        settingsStorage: SettingsStorage
+    ){
         self.apiService = apiService
+        self.storage = settingsStorage
         makeCategoriesRequest()
     }
     
@@ -46,4 +50,5 @@ public class CategoriesViewModel: CategoriesViewModelContract {
               })
             .store(in: &disposables)
     }
+    
 }

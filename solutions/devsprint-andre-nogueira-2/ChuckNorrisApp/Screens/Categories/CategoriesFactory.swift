@@ -9,10 +9,15 @@ import Foundation
 
 struct CategoriesFactory {
     
-    func makeCategories() -> CategoriesView {
+    static func makeCategories() -> CategoriesView {
         let api = ApiService()
-        let categoriesViewModel = CategoriesViewModel(apiService: api)
-        let categoriesView = CategoriesView(categoriesViewModel: categoriesViewModel)
+        let storage = SettingsStorage()
+        let searchViewModel = SearchViewModel(service: api)
+        let categoriesViewModel = CategoriesViewModel(apiService: api, settingsStorage: storage)
+        let categoriesView = CategoriesView(
+            searchViewModel: searchViewModel,
+            categoriesViewModel: categoriesViewModel,
+            storage: storage)
         return categoriesView
     }
 }

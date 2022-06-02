@@ -10,10 +10,19 @@ import SwiftUI
 struct CategoriesView: View {
     
     @ObservedObject private var categoriesViewModel: CategoriesViewModel
+    @ObservedObject private var searchViewModel: SearchViewModel
+    
     @EnvironmentObject private var searchContext: SearchContext
-
-    init(categoriesViewModel: CategoriesViewModel) {
+    private let storage: SettingsStorage
+    
+    init(
+        searchViewModel: SearchViewModel,
+        categoriesViewModel: CategoriesViewModel,
+        storage: SettingsStorage
+    ) {
+        self.searchViewModel = searchViewModel
         self.categoriesViewModel = categoriesViewModel
+        self.storage = storage
     }
     
     var body: some View {
@@ -26,6 +35,7 @@ struct CategoriesView: View {
                     ) { category in
                         Text(category).onTapGesture {
                             searchContext.searchText = category
+                            storage.savePreferred(categorie: category)
                         }
                     }
                 }

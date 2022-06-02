@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct SearchView: View {
-
+    
     @State private var showingSettings = false
     @EnvironmentObject private var searchContext: SearchContext
-    private var categoriesFactory = CategoriesFactory()
     @ObservedObject private var viewModel: SearchViewModel
     
     init(viewModel: SearchViewModel) {
@@ -20,37 +19,35 @@ struct SearchView: View {
     
     var body: some View {
         NavigationView {
-            categoriesFactory.makeCategories()
+            
+            CategoriesFactory
+                .makeCategories()
                 .navigationTitle("Search")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button("Settings") {
-                            
                             showingSettings.toggle()
-                        }.sheet(isPresented: $showingSettings,
-                                onDismiss: {
-
-
-                                }) {
-
-                             SettingsView()
-                         }
+                        }.sheet(
+                            isPresented: $showingSettings,
+                            onDismiss: {}
+                        ) {
+                            SettingsView()
+                        }
                     }
                 }
-        }.searchable(text: $searchContext.searchText,
-                     placement: .navigationBarDrawer(displayMode: .always)) {
-
+        }.searchable(
+            text: $searchContext.searchText,
+            placement: .navigationBarDrawer(
+                displayMode: .always
+            )
+        ) {
             ForEach(viewModel.jokesArray, id: \.self) { fact in
-                    Text(fact)
-                }
+                Text(fact)
+            }
         }.onSubmit(of: .search) {
-            viewModel.makeSearchRequest(with: searchContext.searchText)
+            viewModel.makeSearchRequest(
+                with: searchContext.searchText
+            )
         }
     }
 }
-//
-//struct SearchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SearchView()
-//    }
-//}
